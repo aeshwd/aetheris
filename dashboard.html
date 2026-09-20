@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheris Academy - Enterprise Faculty & Educator Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white overflow-x-hidden">
+
+    <!-- Top Sticky Enterprise Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 px-6 lg:px-12 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+                    A
+                </div>
+                <div>
+                    <span class="text-lg font-extrabold tracking-tight text-white">AETHERIS <span class="text-blue-500">ACADEMY</span></span>
+                    <span class="text-[10px] text-slate-400 tracking-wider uppercase block font-semibold">Flagship Faculty Network</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex items-center gap-2 text-xs font-semibold bg-emerald-500/10 text-emerald-400 px-3.5 py-1.5 rounded-full border border-emerald-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Network Secure & Encrypted
+                </div>
+                <a href="index.html" class="text-xs font-semibold text-slate-300 hover:text-white bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl transition-all">
+                    ← Back to Portal Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Header Section -->
+    <section class="relative pt-16 pb-12 px-6 lg:px-12 overflow-hidden border-b border-slate-900">
+        <!-- Ambient Background Glows -->
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 inline-block mb-6 shadow-inner">
+                Authorized Academic Board Gateway v4.2
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Educator Command <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400">Dashboard</span>
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+                Enterprise management infrastructure for distinguished educators. Authenticate via the master gate below to access secure faculty directories, student satisfaction metrics, and performance archives.
+            </p>
+
+            <!-- Quick Academy Stats Ticker -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto bg-slate-900/60 backdrop-blur-xl p-5 rounded-3xl border border-slate-800 shadow-2xl">
+                <div class="text-center">
+                    <span class="text-xs text-slate-400 block font-medium">Global Enrollees</span>
+                    <strong class="text-lg sm:text-xl font-bold text-white mt-0.5 block">12,450+</strong>
+                </div>
+                <div class="text-center border-l border-slate-800">
+                    <span class="text-xs text-slate-400 block font-medium">Faculty Rating Avg</span>
+                    <strong class="text-lg sm:text-xl font-bold text-amber-400 mt-0.5 block">4.95 ★</strong>
+                </div>
+                <div class="text-center border-l border-slate-800">
+                    <span class="text-xs text-slate-400 block font-medium">Active Programs</span>
+                    <strong class="text-lg sm:text-xl font-bold text-blue-400 mt-0.5 block">8 Flagship</strong>
+                </div>
+                <div class="text-center border-l border-slate-800">
+                    <span class="text-xs text-slate-400 block font-medium">Uptime Guarantee</span>
+                    <strong class="text-lg sm:text-xl font-bold text-emerald-400 mt-0.5 block">99.9%</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dynamic Content Workspace -->
+    <main class="py-16 px-6 lg:px-12 max-w-7xl mx-auto relative">
+
+        <!-- ================= STATE 1: MASTER PORTAL LOGIN GATE ================= -->
+        <div id="masterLoginBox" class="max-w-lg mx-auto bg-slate-900/90 backdrop-blur-2xl border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold uppercase tracking-wider px-5 py-1.5 rounded-full shadow-lg">
+                🔐 Master Authentication Required
+            </div>
+            
+            <form onsubmit="handleMasterLogin(event)" class="space-y-6 mt-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Master Administrator ID</label>
+                    <input type="text" id="masterUser" required autocomplete="off" placeholder="Enter board username" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Secure Gateway Password</label>
+                    <input type="password" id="masterPass" required autocomplete="off" placeholder="••••••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-all">
+                </div>
+                <div id="masterError" class="text-rose-400 text-xs hidden font-medium text-center bg-rose-500/10 p-3 rounded-xl border border-rose-500/20">
+                    Authentication failed. Please verify administrative credentials.
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 rounded-2xl transition-all shadow-xl shadow-blue-500/25 text-sm tracking-wide">
+                    Unlock Faculty Network ➔
+                </button>
+            </form>
+
+            <div class="mt-8 pt-6 border-t border-slate-800 text-center text-xs text-slate-500 space-y-1">
+                <p>Authorized Board Personnel Only. All session attempts are logged.</p>
+            
+            </div>
+        </div>
+
+        <!-- ================= STATE 2: EDUCATOR DIRECTORY (UNLOCKED) ================= -->
+        <div id="educatorDirectory" class="hidden space-y-10">
+            
+            <!-- Directory Control Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-slate-900/80 backdrop-blur-xl border border-slate-800 p-6 sm:p-8 rounded-3xl gap-6 shadow-2xl">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                        <h3 class="text-xl font-extrabold text-white tracking-tight">Active Faculty Roster</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400">Select an educator profile below to authenticate and unlock their individual performance workspace.</p>
+                </div>
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <button onclick="handleLogout()" class="w-full md:w-auto bg-slate-800 hover:bg-slate-700 text-slate-300 px-5 py-3 rounded-2xl text-xs font-semibold transition-all border border-slate-700/50 shadow-md">
+                        Lock Gateway Session 🔒
+                    </button>
+                </div>
+            </div>
+
+            <!-- Educators Grid Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Educator Card 1: Snowy Goswami -->
+                <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 flex flex-col justify-between shadow-2xl hover:border-blue-500/50 transition-all group">
+                    <div>
+                        <!-- Header & Avatar -->
+                        <div class="flex items-start sm:items-center gap-4 mb-6">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-black shadow-xl shadow-blue-500/20 group-hover:scale-105 transition-transform shrink-0">
+                                SG
+                            </div>
+                            <div>
+                                <h4 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Snowy Goswami</h4>
+                                <p class="text-xs sm:text-sm text-blue-400 font-bold tracking-wide">Lead English Communication Expert</p>
+                                <p class="text-xs text-slate-500 mt-0.5">aeshgoswamiwd@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Bio / Overview -->
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80">
+                            Specializing in corporate communication frameworks, accent neutralization, and rapid-fluency triggers for medical professionals and global aspirants.
+                        </p>
+
+                        <!-- Meta Info List -->
+                        <div class="space-y-3 mb-8 text-xs sm:text-sm text-slate-300 bg-slate-950/60 p-5 rounded-2xl border border-slate-800/80">
+                            <div class="flex justify-between items-center"><span>Flagship Program:</span> <strong class="text-white">FluentX Mastery</strong></div>
+                            <div class="flex justify-between items-center"><span>Cohort Frequency:</span> <strong class="text-white">2 Days / Week Live</strong></div>
+                            <div class="flex justify-between items-center"><span>Total Active Enrollees:</span> <strong class="text-emerald-400">4,100+ Students</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Action Trigger -->
+                    <button onclick="openEducatorModal('Snowy Goswami', 'snowy_goswami', 'fluentx2026', 'Lead English Educator')" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white py-4 rounded-2xl font-bold text-sm transition-all shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2">
+                        <span>Access Snowy's Secure Profile</span> <span>➔</span>
+                    </button>
+                </div>
+
+                <!-- Educator Card 2: Rajshree Hingwe -->
+                <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 flex flex-col justify-between shadow-2xl hover:border-blue-500/50 transition-all group">
+                    <div>
+                        <!-- Header & Avatar -->
+                        <div class="flex items-start sm:items-center gap-4 mb-6">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-black shadow-xl shadow-blue-500/20 group-hover:scale-105 transition-transform shrink-0">
+                                RH
+                            </div>
+                            <div>
+                                <h4 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Rajshree Hingwe</h4>
+                                <p class="text-xs sm:text-sm text-blue-400 font-bold tracking-wide">Senior Anatomy Specialist</p>
+                                <p class="text-xs text-slate-500 mt-0.5">aeshgoswamiwd@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Bio / Overview -->
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80">
+                            Expert in clinical regional anatomy, osteology, and high-yield trauma correlations designed specifically for medical entrance and board aspirants.
+                        </p>
+
+                        <!-- Meta Info List -->
+                        <div class="space-y-3 mb-8 text-xs sm:text-sm text-slate-300 bg-slate-950/60 p-5 rounded-2xl border border-slate-800/80">
+                            <div class="flex justify-between items-center"><span>Flagship Program:</span> <strong class="text-white">Upper Limb Masterclass</strong></div>
+                            <div class="flex justify-between items-center"><span>Cohort Frequency:</span> <strong class="text-white">2 Days / Week + 3D Labs</strong></div>
+                            <div class="flex justify-between items-center"><span>Total Active Enrollees:</span> <strong class="text-emerald-400">2,800+ Students</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Action Trigger -->
+                    <button onclick="openEducatorModal('Rajshree Hingwe', 'rajshree_hingwe', 'anatomy2026', 'Senior Anatomy Specialist')" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white py-4 rounded-2xl font-bold text-sm transition-all shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2">
+                        <span>Access Rajshree's Secure Profile</span> <span>➔</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Additional Academy Information Footer Banner -->
+            <div class="bg-gradient-to-r from-blue-950/40 via-slate-900 to-indigo-950/40 border border-slate-800 rounded-3xl p-8 text-center space-y-4">
+                <h4 class="text-lg font-bold text-white">Need to register a new educator profile?</h4>
+                <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">New faculty onboarding requires authorization from the Aetheris Academy Academic Board. Contact technical support for credential provisioning.</p>
+                <div class="pt-2">
+                    <a href="mailto:aeshgoswamiwd@gmail.com" class="inline-block bg-slate-800 hover:bg-slate-700 text-blue-400 font-semibold px-6 py-2.5 rounded-xl text-xs transition-all border border-slate-700">
+                        Request Faculty Credential Provisioning ✉️
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 py-10 px-6 lg:px-12 bg-slate-950 text-center text-xs text-slate-500 space-y-3">
+        <p class="font-semibold text-slate-400">Aetheris Academy Academic Board • Secure Enterprise Infrastructure</p>
+        <p>Confidential & Proprietary • Authorized Personnel Access Only</p>
+        
+    </footer>
+
+    <!-- ================= SECURE EDUCATOR LOGIN & DASHBOARD MODAL ================= -->
+    <div id="educatorModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-2xl hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl my-8">
+            <button onclick="closeEducatorModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-9 h-9 flex items-center justify-center rounded-full transition-all text-xs font-bold shadow-md">✕</button>
+            
+            <!-- Step A: Educator Authentication Form -->
+            <div id="educatorAuthFormContainer">
+                <div class="mb-6">
+                    <span class="text-[10px] font-bold uppercase tracking-widest bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full border border-blue-500/20">Secure Verification</span>
+                    <h3 id="modalEducatorNameTitle" class="text-xl sm:text-2xl font-extrabold text-white mt-2 mb-1 tracking-tight">Faculty Portal</h3>
+                    <p id="modalEducatorSubtitle" class="text-xs text-slate-400">Enter personal credentials to unlock verified performance archives.</p>
+                </div>
+                
+                <form onsubmit="handleEducatorAuth(event)" class="space-y-4">
+                    <input type="hidden" id="hiddenTargetUser">
+                    <input type="hidden" id="hiddenTargetPass">
+                    <input type="hidden" id="hiddenEducatorRole">
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Assigned Username</label>
+                        <input type="text" id="educatorInputUser" required autocomplete="off" placeholder="Enter username" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-blue-500 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Password</label>
+                        <input type="password" id="educatorInputPass" required autocomplete="off" placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-blue-500 transition-all">
+                    </div>
+                    <div id="educatorAuthError" class="text-rose-400 text-xs hidden font-medium text-center bg-rose-500/10 p-3 rounded-xl border border-rose-500/20">
+                        Invalid educator credentials. Please check your assigned login details.
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-2xl transition-all shadow-lg shadow-blue-500/20 text-sm tracking-wide mt-2">
+                        Unlock Analytics & Profile 🔓
+                    </button>
+                </form>
+            </div>
+
+            <!-- Step B: Unlocked Private Educator Dashboard View -->
+            <div id="educatorPrivateDashboard" class="hidden space-y-6">
+                
+                <!-- Profile Header Banner -->
+                <div class="flex items-center gap-4 border-b border-slate-800 pb-5">
+                    <div id="dashAvatar" class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-white text-2xl shadow-lg shrink-0">
+                        SG
+                    </div>
+                    <div>
+                        <h3 id="privateDashName" class="text-xl font-extrabold text-white tracking-tight">Educator Name</h3>
+                        <p id="privateDashRole" class="text-xs text-blue-400 font-bold">Verified Faculty Workspace</p>
+                    </div>
+                </div>
+
+                <!-- Rating & Satisfaction Metrics Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center shadow-inner">
+                        <span class="text-xs text-slate-400 block font-medium mb-1">Overall Rating</span>
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-amber-400 text-base">★</span>
+                            <strong id="dashRating" class="text-xl font-extrabold text-white">4.94</strong>
+                            <span class="text-xs text-slate-500">/ 5.0</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center shadow-inner">
+                        <span class="text-xs text-slate-400 block font-medium mb-1">Student Satisfaction</span>
+                        <strong id="dashSatisfaction" class="text-xl font-extrabold text-emerald-400">99.1%</strong>
+                    </div>
+                </div>
+
+                <!-- Secondary Detailed Analytics -->
+                <div class="space-y-3 text-sm text-slate-300 bg-slate-950/60 p-5 rounded-2xl border border-slate-800">
+                    <div class="flex justify-between items-center text-xs"><span>Total Active Enrollees:</span> <strong id="dashStudents" class="text-white">4,100+ Students</strong></div>
+                    <div class="flex justify-between items-center text-xs"><span>Live Cohort Sessions:</span> <strong id="dashSessions" class="text-white">52 Completed</strong></div>
+                    <div class="flex justify-between items-center text-xs"><span>Curriculum Compliance:</span> <strong class="text-emerald-400">100% Verified</strong></div>
+                    <div class="flex justify-between items-center text-xs"><span>Academic Standing:</span> <strong class="text-blue-400">Flagship Lead Faculty</strong></div>
+                </div>
+
+                <button onclick="closeEducatorModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 rounded-2xl text-sm transition-all shadow-lg">
+                    Close Dashboard Workspace
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= ENTERPRISE JAVASCRIPT CONTROLS ================= -->
+    <script>
+        // Master Portal Authentication Handler
+        function handleMasterLogin(event) {
+            event.preventDefault();
+            const u = document.getElementById('masterUser').value.trim();
+            const p = document.getElementById('masterPass').value.trim();
+            const err = document.getElementById('masterError');
+
+            const MASTER_USER = "admin";
+            const MASTER_PASS = "aetheris2026";
+
+            if (u === MASTER_USER && p === MASTER_PASS) {
+                err.classList.add('hidden');
+                document.getElementById('masterLoginBox').classList.add('hidden');
+                document.getElementById('educatorDirectory').classList.remove('hidden');
+                window.scrollTo({ top: 200, behavior: 'smooth' });
+            } else {
+                err.classList.remove('hidden');
+            }
+        }
+
+        function handleLogout() {
+            document.getElementById('masterUser').value = '';
+            document.getElementById('masterPass').value = '';
+            document.getElementById('educatorDirectory').classList.add('hidden');
+            document.getElementById('masterLoginBox').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Individual Educator Modal Initializer
+        function openEducatorModal(name, user, pass, role) {
+            const modal = document.getElementById('educatorModal');
+            document.getElementById('modalEducatorNameTitle').innerText = `${name}`;
+            document.getElementById('modalEducatorSubtitle').innerText = `${role} • Secure Portal Verification`;
+            
+            document.getElementById('hiddenTargetUser').value = user;
+            document.getElementById('hiddenTargetPass').value = pass;
+            document.getElementById('hiddenEducatorRole').value = role;
+
+            // Reset modal internal states
+            document.getElementById('educatorAuthFormContainer').classList.remove('hidden');
+            document.getElementById('educatorPrivateDashboard').classList.add('hidden');
+            document.getElementById('educatorInputUser').value = '';
+            document.getElementById('educatorInputPass').value = '';
+            document.getElementById('educatorAuthError').classList.add('hidden');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeEducatorModal() {
+            const modal = document.getElementById('educatorModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Individual Educator Authentication & Dynamic Metrics Loader
+        function handleEducatorAuth(event) {
+            event.preventDefault();
+            const inputUser = document.getElementById('educatorInputUser').value.trim();
+            const inputPass = document.getElementById('educatorInputPass').value.trim();
+            const expectedUser = document.getElementById('hiddenTargetUser').value;
+            const expectedPass = document.getElementById('hiddenTargetPass').value;
+            const educatorName = document.getElementById('modalEducatorNameTitle').innerText;
+            const educatorRole = document.getElementById('hiddenEducatorRole').value;
+            const err = document.getElementById('educatorAuthError');
+
+            if (inputUser === expectedUser && inputPass === expectedPass) {
+                err.classList.add('hidden');
+                document.getElementById('educatorAuthFormContainer').classList.add('hidden');
+                document.getElementById('educatorPrivateDashboard').classList.remove('hidden');
+                
+                // Dynamically populate metrics based on who authenticated
+                document.getElementById('privateDashName').innerText = educatorName;
+                document.getElementById('privateDashRole').innerText = educatorRole;
+                document.getElementById('dashAvatar').innerText = educatorName.split(' ').map(n => n[0]).join('');
+
+                if (expectedUser === 'snowy_goswami') {
+                    document.getElementById('dashRating').innerText = '4.96';
+                    document.getElementById('dashSatisfaction').innerText = '99.2%';
+                    document.getElementById('dashStudents').innerText = '4,100+ Enrolled';
+                    document.getElementById('dashSessions').innerText = '52 Completed';
+                } else {
+                    document.getElementById('dashRating').innerText = '4.98';
+                    document.getElementById('dashSatisfaction').innerText = '98.9%';
+                    document.getElementById('dashStudents').innerText = '2,800+ Enrolled';
+                    document.getElementById('dashSessions').innerText = '44 Completed';
+                }
+            } else {
+                err.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
